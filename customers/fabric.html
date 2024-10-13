@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose by Fabric - Women's Boutique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            
+        }
+
+        .navbar {
+            background-color: #333;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #fff;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover, .navbar a.customize-button {
+            background-color: palevioletred;
+            border-radius: 20px;
+        }
+
+
+        
+
+        .hero {
+            background-image: url('IMG_1711.JPG');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            height: 110px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .browse-button {
+            background-color: palevioletred;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .browse-button:hover {
+            background-color: #d06c9f;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+            margin-top: -50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: palevioletred;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .dress-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+            flex: 1;
+        }
+
+        .dress-card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .dress-card h3 {
+            margin: 15px 0 10px;
+            font-size: 1.2em;
+        }
+
+        .dress-card p {
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .dress-card button {
+            background-color: palevioletred;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dress-card button:hover {
+            background-color: #d06c9f;
+        }
+
+        .dress-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+        .customize-button{
+            background-color: #d1477a !important;
+            }
+        .customize-button:hover{
+            color: black !important;
+            background-color: rgb(247, 144, 178)!important;
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="fabric.html" class="active">Choose by Fabric</a>
+        <a href="abt.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="customize1.html" class="customize-button">Customize Now</a>
+    </div>
+    
+    <div class="hero">
+        <!-- <h1>Discover the Perfect Fabric for Your Custom Dress</h1>
+        <button class="browse-button">Browse Fabrics</button> -->
+    </div>
+    
+    <div class="container">
+        <h1>Choose Your Fabric</h1>
+        <p>Browse through our selection of high-quality fabrics and choose the perfect one for your custom dress.</p>
+        
+        <div class="card-container">
+            <div class="dress-card">
+                <img src="lace.jpeg" alt="Delicate and romantic lace fabric">
+                <h3>Lace</h3>
+                <p>Delicate and romantic, perfect for bridal and special occasions.</p>
+                <button>View Details</button>
+            </div>
+            <div class="dress-card">
+                <img src="silk.jpg" alt="Luxurious and elegant silk fabric">
+                <h3>Silk</h3>
+                <p>Luxurious and elegant, perfect for evening wear.</p>
+                <button>View Details</button>
+            </div>
+            <div class="dress-card">
+                <img src="cotton1.jpg" alt="Comfortable and breathable cotton fabric">
+                <h3>Cotton</h3>
+                <p>Comfortable and breathable, ideal for casual dresses.</p>
+                <button>View Details</button>
+            </div>
+            <div class="dress-card">
+                <img src="modal silk.jpg" alt="Comfortable and breathable cotton fabric">
+                <h3>Modal Silk</h3>
+                <p>Exceptionally soft and durable, ideal for casual dresses.</p>
+                <button>View Details</button>
+            </div>
+            <div class="dress-card">
+                <img src="chiffon.jpg" alt="Lightweight and sheer chiffon fabric">
+                <h3>Chiffon</h3>
+                <p>Lightweight and sheer, perfect for airy and flowy dresses.</p>
+                <button>View Details</button>
+            </div>
+            <div class="dress-card">
+                <img src="tweed.webp" alt="Warm and textured tweed fabric">
+                <h3>Tweed</h3>
+                <p>Warm and textured, perfect for stylish and cozy outfits.</p>
+                <button>View Details</button>
+            </div>
+            
+            <div class="dress-card">
+                <img src="velevt.jpg" alt="Soft and plush velvet fabric">
+                <h3>Velvet</h3>
+                <p>Soft and plush, ideal for luxurious evening gowns.</p>
+                <button>View Details</button>
+            </div>
+            <div class="dress-card">
+                <img src="denim.avif" alt="Durable and stylish denim fabric">
+                <h3>Denim</h3>
+                <p>Durable and stylish, ideal for casual and trendy outfits.</p>
+                <button>View Details</button>
+            </div>
+            <div class="dress-card">
+                <img src="satin.jpg" alt="Smooth and glossy satin fabric">
+                <h3>Satin</h3>
+                <p>Smooth and glossy, ideal for elegant evening dresses.</p>
+                <button>View Details</button>
+            </div>
+            <div class="dress-card">
+                <img src="linen.avif" alt="Breathable and lightweight linen fabric">
+                <h3>Linen</h3>
+                <p>Breathable and lightweight, perfect for summer dresses.</p>
+                <button>View Details</button>
+            </div>
+            <div class="dress-card">
+                <img src="tulle.webp" alt="Delicate and airy tulle fabric">
+                <h3>Tulle</h3>
+                <p>Delicate and airy, perfect for adding volume to dresses.</p>
+                <button>View Details</button>
+            </div>
+            <div class="dress-card">
+                <img src="crepe.jpg" alt="Elegant and textured crepe fabric">
+                <h3>Crepe</h3>
+                <p>Elegant and textured, ideal for sophisticated dresses.</p>
+                <button>View Details</button>
+            </div>
+            <!-- Additional fabric cards can be added here -->
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2024 Women's Boutique. All Rights Reserved.</p>
+    </div>
+</body>
+</html>

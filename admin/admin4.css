@@ -1,0 +1,136 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light gray background for a clean look */
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #17a2b8; /* Teal header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.6em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #343a40; /* Dark gray sidebar */
+    color: #fff;
+    height: 100vh;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: width 0.3s;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+    color: #fff;
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #007bff; /* Bright blue on hover */
+}
+
+.main-content {
+    margin-left: 240px; /* Adjusted for sidebar width */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.card table th,
+.card table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.card table th {
+    background-color: #e9ecef; /* Light gray for headers */
+    color: #333;
+}
+
+.content {
+    margin-left: 240px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #e9ecef; /* Light gray for table headers */
+    color: #333;
+}
+
+button {
+    padding: 8px 15px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #17a2b8; /* Teal color for buttons */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #138496; /* Darker teal on hover */
+    transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+}

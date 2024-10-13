@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Designs</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Manage Designs</h1>
+    </div>
+    <div class="admin-dashboard">
+        <aside class="sidebar">
+            <h3>Menu</h3>
+            <a href="admindshbrd.html">Dashboard</a>
+            <a href="customers.html">Customer Management</a>
+            <a href="staff.html">Staff Management</a>
+            <a href="delivery.html">Delivery Management</a>
+            <a href="communications.html">Communication</a>
+            <a href="manageDesign.html">Manage Designs</a>
+            <a href="orderManage.html">Order Management</a>
+            <a href="useracc.html">User Accounts</a>
+        </aside>
+
+        <main class="content">
+            <h3>Manage Designs</h3>
+            <section id="add-design-section" class="section">
+                <h3>Add New Design</h3>
+                <form>
+                    <label for="design-name">Design Name:</label>
+                    <input type="text" id="design-name" name="design-name" required>
+
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" name="category" required>
+
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" required>
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea>
+
+                    <label for="image-upload">Upload Image:</label>
+                    <input type="file" id="image-upload" name="image-upload" accept="image/*" required>
+
+                    <button type="submit">Add Design</button>
+                </form>
+            </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Design ID</th>
+                        <th>Design Name</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>301</td>
+                        <td>Elegant Evening Gown</td>
+                        <td>Evening Wear</td>
+                        <td>$200</td>
+                        <td><button>View</button> <button>Edit</button> <button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>302</td>
+                        <td>Summer Dress</td>
+                        <td>Casual Wear</td>
+                        <td>$150</td>
+                        <td><button>View</button> <button>Edit</button> <button>Delete</button></td>
+                    </tr>
+                    <!-- Design rows go here -->
+                </tbody>
+            </table>
+           
+        </main>
+    </div>
+        </main>
+    </div>
+</body>
+</html>

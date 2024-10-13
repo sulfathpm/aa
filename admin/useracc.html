@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Accounts</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="header">
+        <h1>User Accounts</h1>
+    </div>
+    <div class="admin-dashboard">
+        <aside class="sidebar">
+            <h3>Menu</h3>
+            <a href="admindshbrd.html">Dashboard</a>
+            <a href="customers.html">Customer Management</a>
+            <a href="staff.html">Staff Management</a>
+            <a href="delivery.html">Delivery Management</a>
+            <a href="communications.html">Communication</a>
+            <a href="manageDesign.html">Manage Designs</a>
+            <a href="orderManage.html">Order Management</a>
+            <a href="useracc.html">User Accounts</a>
+        </aside>
+
+        <main class="content">
+            <h3>User Accounts</h3>
+            <section id="add-user-section" class="section">
+                <h3>Add New User</h3>
+                <form>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="role">Role:</label>
+                    <select id="role" name="role">
+                        <option value="admin">Admin</option>
+                        <option value="staff">Staff</option>
+                        <option value="customer">Customer</option>
+                    </select>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+
+                    <button type="submit">Add User</button>
+                </form>
+            </section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>203</td>
+                        <td>customer01</td>
+                        <td>customer01@example.com</td>
+                        <td>Customer</td>
+                        <td>Inactive</td>
+                        <td>
+                            <button>View</button>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                            <button>Activate</button>
+                        </td>
+                    </tr>
+                    <td>201</td>
+                    <td>admin01</td>
+                    <td>admin01@example.com</td>
+                    <td>Admin</td>
+                    <td>Active</td>
+                    <td>
+                        <button>View</button>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                        <button>Deactivate</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>202</td>
+                    <td>staff01</td>
+                    <td>staff01@example.com</td>
+                    <td>Staff</td>
+                    <td>Active</td>
+                    <td>
+                        <button>View</button>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                        <button>Deactivate</button>
+                    </td>
+                </tr>
+                    <!-- User account rows go here -->
+                </tbody>
+            </table>
+           
+        </main>
+    </div>
+</body>
+</html>

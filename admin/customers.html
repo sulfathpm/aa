@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management</title>
+    <link rel="stylesheet" href="admin.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function() {
+                    alert('You clicked ' + this.textContent + ' on row ' + this.closest('tr').rowIndex);
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Customer Management</h1>
+    </div>
+
+    <div class="admin-dashboard">
+        <aside class="sidebar">
+            <h3>Menu</h3>
+            <a href="admindshbrd.html">Dashboard</a>
+            <a href="customers.html">Customer Management</a>
+            <a href="staff.html">Staff Management</a>
+            <a href="delivery.html">Delivery Management</a>
+            <a href="communications.html">Communication</a>
+            <a href="manageDesign.html">Manage Designs</a>
+            <a href="orderManage.html">Order Management</a>
+            <a href="useracc.html">User Accounts</a>
+        </aside>
+
+        <main class="content">
+            <section id="customers-section" class="section">
+                <h3>Customers</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Example row -->
+                        <tr>
+                            <td>1001</td>
+                            <td>John Smith</td>
+                            <td>john@example.com</td>
+                            <td><button>View</button> <button>Edit</button> <button>Delete</button></td>
+                        </tr>
+                        <!-- Additional rows here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
