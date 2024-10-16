@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="staff.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .header {
+            background-color: #4a4e69;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 2em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .staff-dashboard {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #22223b;
+            color: #fff;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+        }
+
+        .sidebar h3 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            text-align: center; /* Center the sidebar title */
+        }
+
+        .sidebar a {
+            color: #f2e9e4;
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            text-align: center; /* Center text in links */
+            width: 100%; /* Make links full width */
+            padding: 10px; /* Add padding for better click area */
+        }
+
+        .sidebar a:hover {
+            background-color: #4a4e69;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            border-radius: 10px;
+            margin-left: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #22223b;
+        }
+
+        .card p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-right: 5px;
+            border: none;
+            background-color: #9a7bba;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #7c4d8b;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 15px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Staff Dashboard</h1>
+    </div>
+
+    <div class="staff-dashboard">
+        <div class="sidebar">
+            <h3>Menu</h3>
+            <a href="staffdash.html">Dashboard</a>
+            <a href="manage-orders.html">Manage Orders</a>
+            <a href="pending-orders.html">Pending Orders</a>
+            <a href="recent-communications.html">Communication</a>
+            <a href="measurement.html">Measurements</a>
+            <a href="materialreq.html">Material Requirements</a>
+        </div>
+
+        <div class="main-content">
+            <div class="card">
+                <h2>Welcome to the Staff Dashboard</h2>
+                <p>Manage your tasks efficiently and effectively.</p>
+                <div class="menu">
+                    <button>Action 1</button>
+                    <button>Action 2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
