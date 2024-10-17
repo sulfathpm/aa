@@ -17,7 +17,7 @@ if (!isset($staff_id)) {
     die("Staff not logged in.");
 }
 
-// Use prepared statement to fetch staff details
+// Fetch staff details
 $stmt = $dbcon->prepare("SELECT * FROM users WHERE USER_ID = ?");
 if (!$stmt) {
     die("Prepare failed: " . $dbcon->error);
@@ -51,20 +51,12 @@ if ($result && $result->num_rows > 0) {
             background-color: #333;
             padding: 15px 0;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
         .navbar a {
             color: #fff;
             padding: 14px 20px;
             text-decoration: none;
             display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-        .navbar a:hover, .navbar a.customize-button {
-            background-color: palevioletred;
-            border-radius: 20px;
         }
         .profile-container {
             max-width: 1000px;
@@ -79,52 +71,19 @@ if ($result && $result->num_rows > 0) {
             align-items: center;
             margin-bottom: 30px;
         }
-        .profile-header img.profile-pic {
+        .profile-header img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            object-fit: contain;
-            border: 4px solid palevioletred;
             margin-right: 20px;
         }
         .profile-info h2 {
             font-weight: 600;
-            margin-bottom: 5px;
             color: palevioletred;
         }
         .profile-info p {
             font-size: 16px;
             color: #666;
-        }
-        .profile-section {
-            margin-bottom: 30px;
-        }
-        .profile-section h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-            color: palevioletred;
-            border-bottom: 2px solid #ececec;
-            padding-bottom: 10px;
-        }
-        .activity-card {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            transition: all 0.3s ease;
-        }
-        .activity-card:hover {
-            background-color: #f0d9e0;
-        }
-        .settings-link {
-            text-decoration: none;
-            color: palevioletred;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .settings-link:hover {
-            text-decoration: underline;
         }
         .btn-edit {
             padding: 10px 20px;
@@ -133,11 +92,6 @@ if ($result && $result->num_rows > 0) {
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-        .btn-edit:hover {
-            background-color: #d75a8a;
         }
         .footer {
             text-align: center;
@@ -165,15 +119,15 @@ if ($result && $result->num_rows > 0) {
             echo "<a href='staff_profile.php'>Profile</a>";
         }
         ?>
-        <a href="customize.php" class="customize-button">Customize Now</a>
+        <a href="customize.php">Customize Now</a>
     </div>
 
     <div class="profile-container">
         <div class="profile-header">
             <?php if (!empty($staff['PROFILE_PICTURE'])): ?>
-                <img src="<?php echo htmlspecialchars($staff['PROFILE_PICTURE']); ?>" alt="Profile Picture" class="profile-pic">
+                <img src="<?php echo htmlspecialchars($staff['PROFILE_PICTURE']); ?>" alt="Profile Picture">
             <?php else: ?>
-                <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-pic">
+                <img src="https://via.placeholder.com/120" alt="Profile Picture">
             <?php endif; ?>
             <div class="profile-info">
                 <h2><?php echo htmlspecialchars($staff['USERNAME']); ?></h2>
@@ -184,40 +138,37 @@ if ($result && $result->num_rows > 0) {
         </div>
 
         <div class="profile-section">
-            <h3>Recent Activities</h3>
+            <h3>Allotted Orders</h3>
             <?php
-                // Fetch recent activities from the hypothetical activities table
-                $stmt = $dbcon->prepare("SELECT * FROM comments WHERE USER_ID = ? ORDER BY created_at DESC");
+                // Fetch allotted orders from order_assignments table
+                $stmt = $dbcon->prepare("
+                    SELECT o.ORDER_ID, o.STATUSES, o.CREATED_AT
+                    FROM order_assignments oa
+                    JOIN orders o ON oa.ORDER_ID = o.ORDER_ID
+                    WHERE oa.STAFF_ID = ?
+                ");
                 if (!$stmt) {
-                    die("Prepare failed: " . $dbcon->error . " - SQL: " . "SELECT * FROM comments WHERE USER_ID = " . $staff_id);
+                    die("Prepare failed for order query: " . $dbcon->error);
                 }
                 $stmt->bind_param("i", $staff_id);
                 $stmt->execute();
-                $data2 = $stmt->get_result();
+                $result_orders = $stmt->get_result();
 
-                if ($data2 && $data2->num_rows > 0) {
-                    while ($activity = $data2->fetch_assoc()) {
-                        echo "<div class='activity-card'>
-                                <h4>" . htmlspecialchars($activity['DESCRIPTION']) . "</h4>
-                                <p>Date: " . substr($activity['ACTIVITY_DATE'], 0, 10) . "</p>
-                              </div>";
+                if ($result_orders && $result_orders->num_rows > 0) {
+                    echo "<ul>";
+                    while ($order = $result_orders->fetch_assoc()) {
+                        echo "<li>Order ID: " . htmlspecialchars($order['ORDER_ID']) . " - Status: " . htmlspecialchars($order['STATUSES']) . " - Created on: " . substr($order['CREATED_AT'], 0, 10) . "</li>";
                     }
+                    echo "</ul>";
                 } else {
-                    echo "<p>No recent activities found.</p>";
+                    echo "<p>No orders allotted to you.</p>";
                 }
             ?>
         </div>
 
-        <div class="profile-section">
-            <h3>Account Settings</h3>
-            <a href="change_staff_password.php" class="settings-link">Change Password</a>
-            <br>
-            <a href="update_staff_address.php" class="settings-link">Update Address</a>
+        <div class="footer">
+            <p>&copy; 2024 Fashion Boutique. All Rights Reserved.</p>
         </div>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2024 Fashion Boutique. All Rights Reserved.</p>
     </div>
 
 </body>
